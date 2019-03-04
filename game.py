@@ -1,5 +1,6 @@
 import json
 import typing
+import os
 
 try:
     import requests
@@ -18,7 +19,7 @@ except ImportError:
 BASE_URL = ''
 USERNAME = ''
 
-basic_auth = HTTPBasicAuth(USERNAME, "love to code")
+basic_auth = HTTPBasicAuth(USERNAME, os.getenv("SWORDFISH_PASSWORD","love to code"))
 
 json_headers = {"Content-Type": "application/json"}
 
