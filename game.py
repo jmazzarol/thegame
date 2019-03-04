@@ -89,7 +89,7 @@ def play_game(
     if results.get("Won") is True:
         return results.get("Guess")
 
-    if results.get("DastardlyTrick"):
+    if results.get("DastardlyTrick") is True and dt is False:
         return play_game(
             applicant_id=applicant_id,
             game_id=game_id,
